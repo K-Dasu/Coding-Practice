@@ -25,10 +25,11 @@ void print(node * head)
 }
 
 
-void reverse(node * head)
+//2n O(n)
+void reverse(node ** head)
 {
     vector<node *> c;
-    node * temp = head;
+    node * temp = * head;
     
     for(;temp;temp = temp->next)
     {
@@ -41,11 +42,24 @@ void reverse(node * head)
     }
     
     c[0]->next = NULL;
-    head = c[c.size() - 1];
-    
-    print(head);
+    * head = c[c.size() - 1];
 }
 
+// n O(n)
+void reverse2(node ** head)
+{
+    struct node* prev   = NULL;
+    struct node* current = * head;
+    struct node* next;
+    while (current != NULL)
+    {
+        next  = current->next;
+        current->next = prev;
+        prev = current;
+        current = next;
+    }
+    * head = prev;
+}
 
 void solution()
 {
@@ -67,7 +81,8 @@ void solution()
     l3->next = NULL;
     
     print(head);
-    reverse(head);    
+    reverse(&head);
+    print(head);
 }
 
 
