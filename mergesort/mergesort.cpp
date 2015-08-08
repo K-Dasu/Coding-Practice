@@ -9,27 +9,22 @@
 #include <vector>
 using namespace std;
 
-
-vector<int> merge(vector<int> L , vector<int> R)
-{
-    vector<int> merge;
+template<class T>
+vector<T> merge(vector<T> L, vector<T> R){
+    vector<T> merge;
     int i = 0;
     int j = 0;
     
-    while(i < L.size() || j < R.size())
-    {
-        if(i < L.size() && j < R.size())
-        {
-            if(L[i] < R[j])
-            {
+    while(i < L.size() || j < R.size()){
+        if(i < L.size() && j < R.size()){
+            if(L[i] < R[i]){
                 merge.push_back(L[i]);
                 i++;
             }else{
-                merge.push_back(R[j]);
+                merge.push_back(L[j]);
                 j++;
             }
-        }else if(i < L.size())
-        {
+        }else if(i < L.size()){
             merge.push_back(L[i]);
             i++;
         }else if(j < R.size()){
@@ -41,23 +36,16 @@ vector<int> merge(vector<int> L , vector<int> R)
     return merge;
 }
 
-
-
-vector<int> sort(vector<int> unsorted)
-{
-    if(unsorted.size() <= 1)
-    {
-        return unsorted;
-    }
+template<class T>
+vector<T> sort(vector<T> unsorted){
+    if(unsorted.size() <= 1){ return unsorted;}
     
     int midpoint = unsorted.size() / 2;
-    vector<int> left;
-    vector<int> right;
+    vector<T> left;
+    vector<T> right;
     
-    for(int i = 0; i < unsorted.size(); i++)
-    {
-        if(i < midpoint)
-        {
+    for(int i = 0; i < unsorted.size(); i++){
+        if(i < midpoint){
             left.push_back(unsorted[i]);
         }else{
             right.push_back(unsorted[i]);
@@ -68,7 +56,6 @@ vector<int> sort(vector<int> unsorted)
     right = sort(right);
     return merge(left,right);
 }
-
 
 
 void test1()
