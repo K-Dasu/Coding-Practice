@@ -1,15 +1,16 @@
+//Reverse a null terminated string in C
+//swap first ele with last ele
+// {a,b,c,\0} = {c,b,a,\0}
+// i = 0 && j = 2
+// i = 1 && j = 1
+// Issue with string0[]  = "abcd" VS string0[5] = {"a,b,c,d,\0"};
+
 #include <stdio.h>
 #include <string.h>
 
 typedef int bool;
 #define true 1
 #define false 0
-
-//swap first ele with last ele
-// {a,b,c,\0} = {c,b,a,\0}
-// i = 0 && j = 2
-// i = 1 && j = 1
-// Issue with string0[]  = "abcd" VS string0[5] = {"a,b,c,d,\0"};
 
 
 //Expected input are string created like char str[] = "hello world";
