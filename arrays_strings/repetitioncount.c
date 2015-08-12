@@ -6,11 +6,19 @@
 #include <stdio.h>
 #include <string.h>
 
+void concatenate(int * pos, char buf[], char str[]){
+    int len = strlen(str);
+    int i = 0;
+    for(i = 0; i < len; i++){
+        buf[*pos + i] = str[i];
+    }
+    *pos += i;
+}
+
 void count(char str[]){
-    int count = 1, i;
+    int count = 1, i, pos = 0;
     int len = strlen(str);
     char buf[len];
-    strcpy(buf,"");
     
     for(i = 0; i + 1 < len; i++){
         if(str[i] == str[i + 1]){
@@ -18,11 +26,11 @@ void count(char str[]){
         }else{
             char tempbuf[9];
             sprintf(tempbuf,"%c%d",str[i],count);
-            strcat(buf,tempbuf);
+            concatenate(&pos,buf,tempbuf);
             count = 1;
         }
     }
-    
+    buf[pos] = '\0';
     if(strlen(buf) > strlen(str)) return;
     
     for(i = 0; i < len; i++){
