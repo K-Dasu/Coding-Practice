@@ -1,17 +1,8 @@
-#ifndef GraphTreeAlgorithms_H_
-#define GraphTreeAlgorithms_H_
-
-class graphTree{
-
+#ifndef TREE_H_
+#define TREE_H_
+class Tree{
     
 public:
-    // Graph Related
-    void BFS(Node * root);
-    void DFS(Node * root);
-    void detectCycle(Node * root);
-    void djikstras(Node * root);
-    void bellmanFord(Node * root);
-
     // binary tree related
     void insert(int value, Node * root);
     void removeValue(int value, Node * root);
@@ -21,5 +12,4 @@ public:
     void preorder(Node * root);
     void inOrder(Node * root);
 };
-
 #endif

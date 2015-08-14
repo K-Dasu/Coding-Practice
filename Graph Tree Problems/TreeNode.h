@@ -2,7 +2,7 @@
 #ifndef TREENODE_H_
 #define TREENODE_H_
 #include "Node.h"
-class treeNode: public Node{
+class TreeNode: public Node{
 private:
     bool isLeaf;
     Node * left;
