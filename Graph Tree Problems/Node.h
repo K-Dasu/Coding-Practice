@@ -8,7 +8,7 @@ private:
     int value;
     bool visited;
 public:
-    void didVisit(bool visited);
+    void didVisit(bool visit);
     void setValue(int newValue);
     bool isVisited();
     int getValue();

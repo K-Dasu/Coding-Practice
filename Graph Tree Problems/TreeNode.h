@@ -8,6 +8,7 @@ private:
     Node * left;
     Node * right;
 public:
+    Tree();
     void setLeft(Node * leftSide);
     void setRight(Node * rightSide);
     void setleaf(bool leaf);

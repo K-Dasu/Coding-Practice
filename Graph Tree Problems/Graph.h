@@ -4,6 +4,7 @@
 class Graph{
 public:
     // Graph Related
+    Graph();
     void BFS(Node * root);
     void DFS(Node * root);
     void detectCycle(Node * root);
