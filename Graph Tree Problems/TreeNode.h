@@ -4,13 +4,13 @@
 #include "Node.h"
 class TreeNode: public Node{
 private:
-    bool isLeaf;
-    Node * left;
+    bool leaf;
+    TreeNode * left;
     Node * right;
 public:
-    Tree();
-    void setLeft(Node * leftSide);
-    void setRight(Node * rightSide);
+    TreeNode();
+    void setLeft(TreeNode * leftSide);
+    void setRight(TreeNode * rightSide);
     void setleaf(bool leaf);
     bool isLeaf();
     virtual int myType();
