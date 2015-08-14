@@ -11,7 +11,7 @@ public:
     TreeNode();
     void setLeft(TreeNode * leftSide);
     void setRight(TreeNode * rightSide);
-    void setleaf(bool leaf);
+    void setLeaf(bool leaf);
     bool isLeaf();
     virtual int myType();
 };

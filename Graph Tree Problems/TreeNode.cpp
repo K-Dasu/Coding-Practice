@@ -27,7 +27,7 @@ void TreeNode::setRight(TreeNode * rightSide){
     right = rightSide;
 }
 
-void TreeNode::setleaf(bool thisALeaf){
+void TreeNode::setLeaf(bool thisALeaf){
     leaf = thisALeaf;
 }
 

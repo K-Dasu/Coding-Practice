@@ -13,6 +13,8 @@ private:
 public:
     GraphNode();
     vector<Node *> getChildren();
+    string getColor();
+    void setColor(string newColor);
     void addChild(Node * child);
     virtual int myType();
 };

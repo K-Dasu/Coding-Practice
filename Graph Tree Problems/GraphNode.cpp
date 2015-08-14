@@ -25,7 +25,13 @@ void GraphNode::addChild(Node * child){
     children.push_back(child);
 }
 
+string GraphNode::getColor(){
+    return color;
+}
 
+void GraphNode::setColor(string newColor){
+    color = newColor;
+}
 
 int GraphNode::myType(){
     printf("I am a graph node\n");

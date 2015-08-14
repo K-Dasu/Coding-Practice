@@ -14,16 +14,49 @@
 using namespace std;
 
 
-int main(){
-    
+//Testing to see if the node classes are working as expected
+void test1(){
     GraphNode * graphnode = new GraphNode();
+    graphnode->setValue(777);
+    graphnode->setColor("red");
     TreeNode * treenode = new TreeNode();
+    treenode->setValue(122);
+    treenode->setLeaf(true);
     Node * mynode = new Node();
+    mynode->setValue(331);
     
     vector<Node *> test1;
     test1.push_back(graphnode);
     test1.push_back(treenode);
     test1.push_back(mynode);
     
+    for(int i = 0; i < test1.size(); i++){
+        switch (test1[i]->myType()) {
+            case 0:{
+                printf("Node value is %d\n",test1[i]->getValue());
+                break;
+            }
+            case 1:{
+                TreeNode * tNode = dynamic_cast<TreeNode * >(test1[i]);
+                printf("TreeNode value is %d\n",tNode->getValue());
+                if(!tNode->isLeaf()){
+                    printf("Not a leaf\n");
+                }else{
+                    printf("leaf\n");
+                }
+                break;
+            }
+            case 2:{
+                GraphNode * gNode = dynamic_cast<GraphNode * >(test1[i]);
+                printf("GraphNode value is %d and its color %s\n",gNode->getValue(), gNode->getColor().c_str());
+                break;
+            }
+        }
+    }
+    
+}
+
+int main(){
+    test1();
     return 0;
 }
