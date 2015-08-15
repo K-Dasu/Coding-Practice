@@ -35,6 +35,15 @@ bool TreeNode::isLeaf(){
     return leaf;
 }
 
+TreeNode * getLeft(){
+    return left;
+}
+
+TreeNode * getRight(){
+    return right;
+}
+
+
 int TreeNode::myType(){
     printf("I am a treenode\n");
     return 1;

@@ -6,13 +6,13 @@ using namespace std;
 
 class Graph{
 public:
-    // Graph Related
+    // Graph Related [BASICS]
     Graph();
     void BFS(GraphNode * root);
     void RDFS(GraphNode * root);
     void DFS(GraphNode * root);
 
-    
+    // TODO: Implement something fancy and fun here
 };
 
 
