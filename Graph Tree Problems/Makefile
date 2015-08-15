@@ -4,11 +4,14 @@ CFLAGS=-g -Wall
 
 all: myprog
 
-myprog: main.o GraphNode.o TreeNode.o Node.o
-	$(CC) $(CFLAGS) -o myprog main.o GraphNode.o TreeNode.o Node.o
+myprog: main.o Graph.o GraphNode.o TreeNode.o Node.o
+	$(CC) $(CFLAGS) -o myprog main.o Graph.o GraphNode.o TreeNode.o Node.o
 
 main.o: main.cpp
 	$(CC) $(CFLAGS) -c main.cpp
+
+Graph.o: Graph.cpp Graph.h
+	$(CC) $(CFLAGS) -c Graph.cpp
 
 GraphNode.o: GraphNode.cpp GraphNode.h
 	$(CC) $(CFLAGS) -c GraphNode.cpp

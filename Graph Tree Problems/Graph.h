@@ -1,15 +1,18 @@
 #ifndef GRAPH_H_
 #define GRAPH_H_
 
+#include "GraphNode.h"
+using namespace std;
+
 class Graph{
 public:
     // Graph Related
     Graph();
-    void BFS(Node * root);
-    void DFS(Node * root);
-    void detectCycle(Node * root);
-    void djikstras(Node * root);
-    void bellmanFord(Node * root);
+    void BFS(GraphNode * root);
+    void DFS(GraphNode * root);
+    void detectCycle(GraphNode * root);
+    void djikstras(GraphNode * root);
+    void bellmanFord(GraphNode * root);
     
 };
 

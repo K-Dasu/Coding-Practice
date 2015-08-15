@@ -15,13 +15,14 @@ using namespace std;
 
 GraphNode::GraphNode(){
     color = "";
+    distance = 0;
 }
 
-vector<Node *> GraphNode::getChildren(){
+vector<GraphNode *> GraphNode::getChildren(){
     return children;
 }
 
-void GraphNode::addChild(Node * child){
+void GraphNode::addChild(GraphNode * child){
     children.push_back(child);
 }
 
@@ -31,6 +32,15 @@ string GraphNode::getColor(){
 
 void GraphNode::setColor(string newColor){
     color = newColor;
+}
+
+
+int GraphNode::getDistance(){
+    return distance;
+}
+
+void GraphNode::setDistance(int length){
+    distance = length;
 }
 
 int GraphNode::myType(){

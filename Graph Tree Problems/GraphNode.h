@@ -7,15 +7,19 @@
 class GraphNode: public Node{
     
 private:
-    vector<Node *> children;
+    vector<GraphNode *> children;
+    int distance;
     string color;
     
 public:
     GraphNode();
-    vector<Node *> getChildren();
+    vector<GraphNode *> getChildren();
     string getColor();
+    int getDistance();
+    
     void setColor(string newColor);
-    void addChild(Node * child);
+    void setDistance(int length);
+    void addChild(GraphNode * child);
     virtual int myType();
 };
 #endif
