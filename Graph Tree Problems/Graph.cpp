@@ -8,6 +8,7 @@
 
 #include <stdio.h>
 #include <queue>
+#include <stack>
 #include "Graph.h"
 
 
@@ -34,7 +35,41 @@ void Graph::BFS(GraphNode * root){
     }
 }
 
-void Graph::DFS(GraphNode * root){}
-void Graph::detectCycle(GraphNode * root){}
-void Graph::djikstras(GraphNode * root){}
-void Graph::bellmanFord(GraphNode * root){}
+void Graph::RDFS(GraphNode * root){
+    root->didVisit(true);
+    vector<GraphNode *> neighbors = root->getChildren();
+    for(int i = 0; i < neighbors.size(); i++){
+        if(!neighbors[i]->isVisited()){
+            DFS(neighbors[i]);
+        }
+    }
+}
+
+void Graph::DFS(GraphNode * root){
+    stack<GraphNode *> notVisited;
+    nonVisitied.push_back(root);
+    
+    while (!notVisited.empty()) {
+        GraphNode * currentNode = notVisited.pop();
+        if(!currentNode->isVisited()){
+            currentNode->didVisit(true);
+            vector<GraphNode *> neighbors = currentNode->getChildren();
+            for(int i = 0; i < neighbors.size(); i++){
+                nonVisitied.push_back(neighbors[i]);
+            }
+        }
+    }
+    
+}
+
+
+void Graph::detectCycle(GraphNode * root){
+    
+}
+
+void Graph::djikstras(GraphNode * root){
+    
+}
+void Graph::bellmanFord(GraphNode * root){
+    
+}
