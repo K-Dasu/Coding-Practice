@@ -11,9 +11,7 @@ public:
     void BFS(GraphNode * root);
     void RDFS(GraphNode * root);
     void DFS(GraphNode * root);
-    void detectCycle(GraphNode * root);
-    void djikstras(GraphNode * root);
-    void bellmanFord(GraphNode * root);
+
     
 };
 

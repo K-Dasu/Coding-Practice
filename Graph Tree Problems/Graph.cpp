@@ -35,6 +35,7 @@ void Graph::BFS(GraphNode * root){
     }
 }
 
+//Can be used for topological sort...
 void Graph::RDFS(GraphNode * root){
     root->didVisit(true);
     vector<GraphNode *> neighbors = root->getChildren();
@@ -43,6 +44,7 @@ void Graph::RDFS(GraphNode * root){
             DFS(neighbors[i]);
         }
     }
+    //add to stack for topological sort then print stack and profit
 }
 
 void Graph::DFS(GraphNode * root){
@@ -63,13 +65,4 @@ void Graph::DFS(GraphNode * root){
 }
 
 
-void Graph::detectCycle(GraphNode * root){
-    
-}
 
-void Graph::djikstras(GraphNode * root){
-    
-}
-void Graph::bellmanFord(GraphNode * root){
-    
-}
